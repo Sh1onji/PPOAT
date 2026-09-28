@@ -1,5 +1,9 @@
-@font-face{ font-family:"Genshin"; src:url(Font/zhcn.ttf) }
-*{ font-family:"Genshin"; margin:0; box-sizing:border-box; }
+@font-face{ font-family:"Genshin"; 
+  src:url(Font/zhcn.ttf) }
+
+*{ font-family:"Genshin"; 
+  margin:0; 
+  box-sizing:border-box; }
 
 body{
     color: aliceblue;
@@ -364,3 +368,291 @@ footer{
     height: 140px;
   }
 }
+
+
+
+/* 
+----------------------------------------------------------------------------------
+HOMEPAGE SI MARK JOSEPH ONGARIA LANG PWEDE GUMALAW
+----------------------------------------------------------------------------------------
+*/
+
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+/*Header section*/
+
+
+header.Homepage{ 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 50px;
+    box-sizing: border-box;
+    z-index: 10;
+    gap: 10px;
+    background-color: transparent;
+    border-bottom: none;
+    
+    
+    
+}
+
+header.Homepage .logo {
+    top: 10px;
+    left: 50px;
+    width: 65px;
+    height: auto;
+    z-index: 1;
+    
+}
+
+
+header.Homepage .header-text {
+
+    top: 10px;
+    left: 120px;
+    font-size: clamp(18px, 1.5vw, 25px);
+    color: white;
+}
+
+header.Homepage .nav{
+    margin-left: auto;
+    display: flex;
+    gap: clamp(15px, 2vw, 30px);
+}
+
+header.Homepage .nav a {
+    Color: white;
+    text-decoration: none;  
+    
+}
+
+
+
+/*Hero section*/
+
+section{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+   
+   
+}
+
+section.Homepage {
+
+    /*mg baguhin mo ung rgba 0.8 kung masyadong madilim 0.6 or 0.7 sick seven*/
+    background-color: rgba(31, 1, 28, 0.5);
+    background-image: url(images/HomepageIMG/BGHomepage.jpg);
+     padding: 6vh 8vw;
+
+}
+
+
+section.Homepage .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+    max-width: 650px;
+    color: white;
+    z-index: 1; 
+
+}
+
+section.Homepage p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+section.Homepage p.subText {
+    font-size: clamp(11px, 1.5vw, 15px);
+}
+
+section.Homepage p.subText img.logo-text {
+    width: clamp(20px, 2vw, 30px);
+    height: auto;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+section.Homepage p.Title {
+    font-size: clamp(28px, 6vw, 70px);
+}
+
+section.Homepage p.text {
+    font-size: clamp(12px, 1.8vw, 20px);
+}
+
+section.Homepage button {
+    font-size: clamp(13px, 1.4vw, 18px);
+    padding: clamp(8px, 1.2vw, 15px) clamp(18px, 3vw, 35px);
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    
+}
+
+section.Homepage .buttons {
+    display: flex;
+    margin-top: 30px;
+    gap: 30px;
+    
+}
+
+section.Homepage button:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+/* Nations */
+
+section.Nations {
+    
+    background-color: rgba(31, 1, 28, 0.9);
+    background-image: url(images/HomepageIMG/Nations.jpg);
+    color: white;
+    
+}
+
+section.Nations .NationInfo {
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+   
+    
+}
+
+section.Nations p.subText {
+    font-size: clamp(11px, 1.5vw, 15px);
+    margin:0;
+}
+
+section.Nations p.Title {
+    font-size: clamp(11px, 6vw, 53px);
+   margin:0;
+   margin-bottom: 10px;
+}
+
+section.Nations p.text {
+    font-size: clamp(12px, 1.8vw, 14px);
+    margin:0;
+}
+
+section.Nations .NationImages {
+    margin-top: 20px;
+    display: flex;
+     gap: 20px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 20px 5px;
+    cursor: grab;
+    
+}
+
+section.Nations .NationImages::-webkit-scrollbar {
+    height: 6px;
+}
+
+section.Nations .NationImages::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+}
+
+section.Nations .NationImages::-webkit-scrollbar-thumb {
+    background: rgba(216, 196, 154, 0.8);
+    border-radius: 20px;
+}
+
+section.Nations .NationImages::-webkit-scrollbar-thumb:hover {
+    background: rgba(216, 196, 154, 1);
+}
+
+section.Nations .NationCard {
+
+    
+    position: relative;
+    flex: 0 0 250px;
+    width: 250px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    
+}
+
+section.Nations .NationImages .nation-image {
+    display: block;
+    width: 250px;
+    height: 400px;
+    object-fit: cover; 
+    filter: brightness(70%);
+    transition: opacity 0.3s ease;
+    
+}
+
+section.Nations .NationCard .nation-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    pointer-events: none;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+section.Nations .NationCard:hover .nation-overlay{
+
+    opacity: 1;
+    
+}
+
+section.Nations .NationCard:hover .nation-image {
+ filter: brightness(90%);
+    
+}
+
+
+
+section.Nations .NationCard p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 12px;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+}
+
