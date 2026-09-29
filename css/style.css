@@ -1,0 +1,374 @@
+@font-face{ font-family:"Genshin"; 
+  src:url(../Font/zhcn.ttf) }
+
+*{ font-family:"Genshin"; 
+  margin:0; 
+  box-sizing:border-box; }
+
+body{
+    color: aliceblue;
+    background-image: url("../images/inazuma-city.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* ===== BLACK TOP BAR - like my sample ===== */
+header{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(0,0,0,0.6); /* solid black */
+    padding: 12px 50px;
+    position: fixed; /* stays at top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
+}
+
+#Inazuma{
+    width: 35px;
+    height: 35px;
+}
+
+#top{
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-right: auto; /* pushes nav to right */
+}
+
+.nav-right{
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.linkpage{
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 0;
+    letter-spacing: 1px;
+}
+.linkpage:hover{
+    color: white;
+}
+
+/* Push content down so it's not hidden under fixed header */
+.hero{
+    padding: 150px 50px 80px;
+}
+
+.hero .desc{
+  max-width: 600px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* your hero text */
+#i1{ font-size:13px; }
+#i2{ font-size:70px; font-weight:bold; margin:5px 0; }
+#i3{ font-size:16px; line-height:1.6; max-width:600px; }
+
+/* ===== SECTION 2 - FIX THE RUINED TEXT ===== */
+.package-box{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "heading"
+    "intro"
+    "packages";
+  gap: 24px;
+  background-color: rgba(17, 13, 75, 0.6);
+  color: white;
+  margin: 40px 20px;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #2a3a6b;
+}
+
+/* Left = text + PKs */
+.package-name{
+  font-size: 26px;
+  line-height: 1.2;
+  grid-area: heading;
+  text-align: center;
+}
+.package-description{
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
+  grid-area: intro;
+  opacity: 0.9;
+}
+/* Make PK1-PK4 into a grid, not a long list */
+.pk-grid{
+  grid-area: packages;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+.pk-card{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  align-items: stretch;
+  gap: 12px;
+  min-height: 164px;
+  border: 2px solid #7f5af0;
+  background: #1a2747;
+  padding: 10px;
+  text-align: left;
+  font-size: 12px;
+  border-radius: 8px;
+  line-height: 1.5;
+}
+.pk-content{
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.pk-card strong{
+  font-weight: normal;
+}
+.pk-card span{
+  font-size: 11px;
+  line-height: 1.4;
+  opacity: 0.8;
+}
+.pk-card img{
+  display: block;
+  width: 220px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.order-button{
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 9px 15px;
+  background: #7f5af0;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.order-button:hover{
+  background: #9678f4;
+}
+
+/* Right = images */
+.package-right{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin: 40px 20px;
+}
+.image-placeholder{
+  position: relative;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+.image-placeholder span{
+  position: absolute;
+  top: 8px; left: 10px;
+  background: rgba(0,0,0,0.6);
+  padding: 2px 6px;
+  font-size: 11px;
+  z-index: 2;
+}
+.image-placeholder img{
+  width: 100%;
+  height: 220px; /* fixed height so it doesn't ruin layout */
+  object-fit: cover;
+  display: block;
+}
+
+/* Room image should be smaller */
+.package-right .room img{
+  height: 140px;
+}
+
+/* ===== SECTION 3 - BOOK NOW with lines ===== */
+.book-now{
+    margin: 40px 50px;
+    text-align: center;
+    padding: 80px 0;
+    border-top: 1px solid white; /* top line */
+    border-bottom: 1px solid white; /* bottom line */
+}
+.book-now h2{
+    font-size: 60px;
+    letter-spacing: 15px;
+}
+
+/* ===== FOOTER with image on left of Inazuma ===== */
+footer{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+  gap: 20px;
+    padding: 20px 50px;
+    border-top: 1px solid white;
+    margin-top: 20px;
+    background: rgba(0,0,0,0.4);
+}
+
+.foot-left{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.foot-left img{
+    width: 25px;
+    height: 25px;
+}
+.foot-nav,
+.foot-socials{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.foot-nav{
+  justify-content: center;
+}
+.foot-socials{
+  justify-content: flex-end;
+}
+.foot-nav a,
+.foot-socials a{
+  color: #ccc;
+  text-decoration: none;
+  font-size: 12px;
+}
+.foot-nav a:hover,
+.foot-socials a:hover{
+  color: white;
+}
+
+@media (max-width: 760px){
+  body{
+    background-attachment: scroll;
+  }
+  header{
+    display: grid;
+    grid-template-columns: 35px minmax(0, 1fr);
+    gap: 8px 12px;
+    padding: 10px 18px;
+  }
+  #top{
+    margin-right: 0;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  .nav-right{
+    grid-column: 1 / -1;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+  }
+  .linkpage{
+    font-size: 13px;
+  }
+  .hero{
+    padding: 140px 24px 52px;
+  }
+  .hero h1{
+    font-size: 48px;
+  }
+  .hero .desc{
+    font-size: 15px;
+  }
+  .hero-bottom h2{
+    font-size: 24px;
+  }
+  .package-box{
+    margin: 28px 16px;
+    padding: 20px;
+    gap: 18px;
+  }
+  .package-name{
+    font-size: 22px;
+  }
+  .pk-card{
+    grid-template-columns: minmax(0, 1fr) 120px;
+    min-height: 160px;
+  }
+  .pk-card img{
+    width: 120px;
+    height: 140px;
+  }
+  .book-now{
+    margin: 32px 24px;
+    padding: 44px 0;
+  }
+  .book-now h2{
+    font-size: 44px;
+    letter-spacing: 10px;
+  }
+  footer{
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    padding: 20px;
+  }
+  .foot-nav,
+  .foot-socials{
+    justify-content: center;
+  }
+}
+
+@media (max-width: 420px){
+  .hero{
+    padding: 132px 18px 44px;
+  }
+  .hero h1{
+    font-size: 42px;
+  }
+  .package-box{
+    margin: 22px 12px;
+    padding: 16px;
+  }
+  .pk-grid{
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pk-card{
+    grid-template-columns: minmax(0, 1fr) 110px;
+  }
+  .pk-card img{
+    width: 110px;
+    height: 130px;
+  }
+  .book-now{
+    margin: 24px 16px;
+    padding: 36px 0;
+  }
+  .book-now h2{
+    font-size: 32px;
+    letter-spacing: 6px;
+  }
+  .foot-nav,
+  .foot-socials{
+    gap: 12px;
+  }
+}
+
+@media (max-width: 340px){
+  .pk-card{
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pk-card img{
+    width: 100%;
+    height: 140px;
+  }
+}
+
+
+
+
