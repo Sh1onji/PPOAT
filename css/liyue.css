@@ -1,0 +1,30 @@
+html::-webkit-scrollbar{
+    display: none;
+}
+body{
+    background-image: url(../images/1175581.jpg);
+}
+
+baddie{
+  background-color: rgba(60, 12, 12, 0.75);
+}
+
+.package-box{
+  background-color: rgba(60, 12, 12, 0.75);
+  border: 1px solid #c9a24a;
+}
+
+.pk-card{
+  border: 2px solid #e0a72e;
+  background: #3a1410;
+}
+
+.order-button{
+  background: #c8372d;
+}
+.order-button:hover,
+.order-button:focus-visible{
+  background: #e6a12a;
+  color: #2a0d0a;
+}
+
