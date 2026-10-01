@@ -2,7 +2,7 @@ html::-webkit-scrollbar{
     display: none;
 }
 body{
-    background-image: url(../images/1175581.jpg);
+    background-image: linear-gradient(rgba(10, 8, 30, 0.65), rgba(10, 8, 30, 0.4)), url(../images/1175581.jpg);
 }
 
 baddie{
