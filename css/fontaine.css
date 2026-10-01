@@ -1,0 +1,21 @@
+body{
+    background-image: url(../images/fontaine_bg.png);
+}
+.package-box{
+  background-color: rgba(10, 30, 66, 0.78);
+  border: 1px solid #7fd0f2;
+}
+
+.pk-card{
+  border: 2px solid #4fa8e8;
+  background: #10284f;
+}
+
+.order-button{
+  background: #2f7fd6;
+}
+.order-button:hover,
+.order-button:focus-visible{
+  background: #a8e6ff;
+  color: #0a1e42;
+}

@@ -87,6 +87,7 @@ section{
 section.Homepage {
 
     /*mg baguhin mo ung rgba 0.8 kung masyadong madilim 0.6 or 0.7 sick seven*/
+    /*tite*/
     background-color: rgba(31, 1, 28, 0.5);
     background-image: url(../images/HomepageIMG/BGHomepage.jpg);
      padding: 6vh 8vw;
@@ -102,7 +103,6 @@ section.Homepage .hero-content {
     max-width: 650px;
     color: white;
     z-index: 1; 
-
 }
 
 section.Homepage p {

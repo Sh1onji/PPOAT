@@ -1,0 +1,21 @@
+body{
+    background-image: url(../images/monstadt.jpg);
+}
+.package-box{
+  background-color: rgba(14, 42, 66, 0.75);
+  border: 1px solid #7fd6c2;
+}
+
+.pk-card{
+  border: 2px solid #5ec8b4;
+  background: #12344f;
+}
+
+.order-button{
+  background: #2fa89a;
+}
+.order-button:hover,
+.order-button:focus-visible{
+  background: #8fe3d0;
+  color: #0e2a42;
+}
