@@ -1,0 +1,45 @@
+/* -------------------------------------------------- ABOUT?CSS   ------------------------------------------------------------------------------------- */
+
+nav {
+    color: white;
+    background-color: rgba(rgb(90, 87, 87), green, blue, 0.1);
+
+}
+
+.n1{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
+    background: transparent;
+    height: 10%;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.n1 a {
+    color: white;
+    text-decoration: none;
+    font-size: 200%;
+
+}
+
+@font-face {
+  font-family: 'CustomZHCN'; 
+  src: url('zhcn.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+html {
+    background-image: url(img/thumb-1920-1275600.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+/* ------------------------------------------------------------ ABOUT/CSS -------------------------- */
