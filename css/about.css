@@ -1,8 +1,7 @@
 /* -------------------------------------------------- ABOUT?CSS   ------------------------------------------------------------------------------------- */
-
 nav {
     color: white;
-    background-color: rgba(rgb(90, 87, 87), green, blue, 0.1);
+    background-color: rgba(90, 87, 87, 0.1);
 
 }
 
@@ -27,16 +26,15 @@ nav {
 }
 
 @font-face {
-  font-family: 'CustomZHCN'; 
-  src: url('zhcn.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
+    font-family: 'CustomZHCN'; 
+    src: url('../Font/zhcn.woff') format('woff'); /* Adjust directory capitalization if needed */
+    font-weight: normal;
+    font-style: normal;
 }
 
 
 html {
-    background-image: url(img/thumb-1920-1275600.jpg);
+    background-image: url('../images/thumb-1920-1275600.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
