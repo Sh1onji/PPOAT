@@ -1,43 +1,208 @@
-/* -------------------------------------------------- ABOUT?CSS   ------------------------------------------------------------------------------------- */
-nav {
-    color: white;
-    background-color: rgba(90, 87, 87, 0.1);
-
-}
-
-.n1{
-    display: flex;
-    box-sizing: border-box;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 40px;
-    background: transparent;
-    height: 10%;
-    width: 100%;
-    margin: 0 auto;
-
-}
-
-.n1 a {
-    color: white;
-    text-decoration: none;
-    font-size: 200%;
-
-}
-
+/* --------------------------------------------------
+   GENERAL
+-------------------------------------------------- */
 @font-face {
-    font-family: 'CustomZHCN'; 
-    src: url('../Font/zhcn.woff') format('woff'); /* Adjust directory capitalization if needed */
+    font-family: "Genshin";
+    src: url("../Font/zhcn.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
-
-html {
-    background-image: url('../images/thumb-1920-1275600.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
+* {
+    font-family: "Genshin", sans-serif;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-/* ------------------------------------------------------------ ABOUT/CSS -------------------------- */
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+
+
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
+
+header.About {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 15px 50px;
+    box-sizing: border-box;
+
+    z-index: 10;
+
+    gap: 10px;
+
+    background-color: transparent;
+    border-bottom: none;
+}
+
+
+/* Logo */
+
+header.About .logo {
+    width: 65px;
+    height: auto;
+}
+
+
+/* Hexanova Agency text */
+
+header.About .header-text {
+    color: white;
+    font-size: clamp(16px, 1.5vw, 25px);
+}
+
+
+/* Navigation */
+
+header.About .nav {
+    margin-left: auto;
+
+    display: flex;
+
+    gap: clamp(15px, 2vw, 30px);
+}
+
+header.About .nav a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 16px;
+}
+
+
+/* --------------------------------------------------
+   ABOUT HERO
+-------------------------------------------------- */
+section.howitbegan {
+    position: relative;
+    z-index: 0;
+    margin-top: -10vh;          /* slides up behind the cut-out area */
+    padding: calc(10vh + 6vh) 8vw 6vh;
+    min-height: 100vh;
+    background-image: url("../images/wp7648732.webp");
+    background-color: rgba(31, 1, 28, 0.5);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.aboutimg {
+    position: absolute;
+    right: 5vw;
+    bottom: 0;
+    height: 75%;
+    z-index: 1;
+}
+
+.wave {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: clamp(60px, 10vw, 140px);
+}
+
+section.About {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    padding: 6vh 8vw;
+
+    background-image:
+        url("../images/thumb-1920-1275600.jpg");
+
+    
+    background-color: rgba(31, 1, 28, 0.5);
+
+    background-blend-mode: multiply;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    z-index: 1;                 /* sits on top of the second image */
+    clip-path: url(#waveClip);
+    min-height: 100vh;
+    /* keep your image, overlay and flex styles */
+    background-attachment: scroll;   /* see note below */
+}
+
+
+/* --------------------------------------------------
+   ABOUT CONTENT
+-------------------------------------------------- */
+
+section.About .about-content {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+
+    max-width: 650px;
+
+    color: white;
+
+    z-index: 1;
+}
+
+
+/* Small text */
+
+section.About p.subText {
+
+    margin: 0;
+
+    font-size: clamp(11px, 1.5vw, 15px);
+}
+
+
+/* Big title */
+
+section.About p.Title {
+
+    margin: 0;
+
+    font-size: clamp(28px, 6vw, 70px);
+
+    font-weight: bold;
+}
+
+
+/* Description */
+
+section.About p.text {
+
+    margin: 0;
+
+    line-height: 1.5;
+
+    font-size: clamp(12px, 1.8vw, 20px);
+}

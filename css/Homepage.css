@@ -92,6 +92,13 @@ section.Homepage {
     background-image: url(../images/HomepageIMG/BGHomepage.jpg);
      padding: 6vh 8vw;
 
+     position: relative;
+    z-index: 1;                 /* sits on top of the second image */
+    clip-path: url(#waveClip);
+    min-height: 100vh;
+    /* keep your image, overlay and flex styles */
+    background-attachment: scroll;   /* see note below */
+
 }
 
 
@@ -282,6 +289,13 @@ section.Nations .NationCard p {
     background: rgba(0, 0, 0, 0.5);
 }
 
+.wave {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: clamp(60px, 10vw, 140px);
+}
 
 
 footer {
