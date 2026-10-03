@@ -302,3 +302,6 @@ footer {
     border: none;
 }
 
+@view-transition {
+  navigation: auto;
+}   

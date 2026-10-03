@@ -19,3 +19,7 @@ body{
   background: #ffb23f;
   color: #2a130d;
 }
+
+@view-transition {
+  navigation: auto;
+}   
