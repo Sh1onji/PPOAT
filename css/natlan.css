@@ -2,7 +2,7 @@ body{
     background-image: url(../images/natlan_bg.jpg);
 }
 .package-box{
-  background-color: rgba(28, 14, 10, 0.8);
+  background-color: linear-gradient(rgba(28, 14, 10, 0.8), rgba(28, 14, 10, 0.8)), url(../images/natlan_bg.jpg);
   border: 1px solid #ff7a2f;
 }
 

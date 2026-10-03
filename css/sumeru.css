@@ -2,7 +2,7 @@ body{
     background-image: url(../images/sumeru_bg.jpg);
 }
 .package-box{
-  background-color: rgba(12, 38, 26, 0.78);
+  background-color: linear-gradient(rgba(12, 38, 26, 0.78), rgba(12, 38, 26, 0.78)), url(../images/sumeru_bg.jpg);
   border: 1px solid #b8d96a;
 }
 

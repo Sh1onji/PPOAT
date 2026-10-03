@@ -2,7 +2,7 @@ body{
     background-image: url(../images/monstadt.jpg);
 }
 .package-box{
-  background-color: rgba(14, 42, 66, 0.75);
+  background-color: linear-gradient(rgba(14, 42, 66, 0.75), rgba(14, 42, 66, 0.75)), url(../images/monstadt.jpg);
   border: 1px solid #7fd6c2;
 }
 

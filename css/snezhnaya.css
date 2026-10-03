@@ -2,7 +2,7 @@ body{
     background-image: url(../images/snzhnaya_bg.webp);
 }
 .package-box{
-  background-color: rgba(16, 24, 48, 0.8);
+  background-color: linear-gradient(rgba(16, 24, 48, 0.8), rgba(16, 24, 48, 0.8)), url(../images/snzhnaya_bg.webp);
   border: 1px solid #b8dcf0;
 }
 
