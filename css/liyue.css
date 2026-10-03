@@ -28,3 +28,6 @@ baddie{
   color: #2a0d0a;
 }
 
+@view-transition {
+  navigation: auto;
+}   
