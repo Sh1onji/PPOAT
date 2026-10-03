@@ -81,7 +81,8 @@ header.About .nav {
     gap: clamp(15px, 2vw, 30px);
 }
 
-header.About .nav a {
+header.About .nav a,
+header.About .nav span {
     color: white;
     text-decoration: none;
 

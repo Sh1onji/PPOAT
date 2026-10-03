@@ -58,7 +58,8 @@ header.Homepage .nav{
     gap: clamp(15px, 2vw, 30px);
 }
 
-header.Homepage .nav a {
+header.Homepage .nav a,
+header.Homepage .nav span {
     Color: white;
     text-decoration: none;  
     
@@ -301,4 +302,3 @@ section.Nations .NationCard p {
 footer {
     border: none;
 }
-
