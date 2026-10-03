@@ -302,3 +302,6 @@ section.Nations .NationCard p {
 footer {
     border: none;
 }
+@view-transition {
+  navigation: auto;
+}   

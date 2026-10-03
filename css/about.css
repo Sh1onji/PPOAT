@@ -99,7 +99,7 @@ section.howitbegan {
     margin-top: -10vh;          /* slides up behind the cut-out area */
     padding: calc(10vh + 6vh) 8vw 6vh;
     min-height: 100vh;
-    background-image: url("../images/wp7648732.webp");
+    background-image: url("../images/wp7648732-genshin-impact-desktop-wallpapers.jpg");
     background-color: rgba(31, 1, 28, 0.5);
     background-blend-mode: multiply;
     background-size: cover;
@@ -207,3 +207,56 @@ section.About p.text {
 
     font-size: clamp(12px, 1.8vw, 20px);
 }
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 0;               /* remove the old 20px */
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 20px;
+    padding: 20px 50px;
+
+    background: rgba(0, 0, 0, 0.4);   /* raise to 0.6 for a darker footer */
+}
+
+.foot-left{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.foot-left img{
+    width: 25px;
+    height: 25px;
+}
+.foot-nav,
+.foot-socials{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.foot-nav{
+  justify-content: center;
+}
+.foot-socials{
+  justify-content: flex-end;
+}
+.foot-nav a,
+.foot-socials a{
+  color: #ccc;
+  text-decoration: none;
+  font-size: 12px;
+}
+.foot-nav a:hover,
+.foot-socials a:hover{
+  color: white;
+}
+
+@view-transition {
+  navigation: auto;
+}   

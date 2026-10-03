@@ -444,3 +444,7 @@ footer{
 }
 
 
+
+@view-transition {
+  navigation: auto;
+}   

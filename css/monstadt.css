@@ -23,4 +23,6 @@ body{
   background: #8fe3d0;
   color: #0e2a42;
 }
-
+@view-transition {
+  navigation: auto;
+}   
