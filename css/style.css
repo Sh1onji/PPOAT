@@ -16,7 +16,17 @@ body{
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+    z-index: 0;
+
+
 }
+
+section.Info {
+
+    background-size: cover;
+    min-height: 100vh;
+}
+
 
 
 
@@ -53,18 +63,18 @@ header{
 }
 
 .nav-right{
-  
-
+    display: flex;
+    gap: clamp(15px, 2vw, 30px);
     top: 10px;
     left: 120px;
-    font-size: clamp(18px, 1.5vw, 25px);
+    font-size: 14px;
     color: white;
 }
 
 .linkpage{
     color: #ccc;
     text-decoration: none;
-    font-size: 14px;
+    font-size: inherit;
     margin-left: 0;
     letter-spacing: 1px;
 }
@@ -91,7 +101,7 @@ header{
   padding: 0 50px 20px;
 }
 
-/* your hero text */
+
 #i1{ font-size:13px; }
 #i2{ font-size:70px; font-weight:bold; margin:5px 0; }
 #i3{ font-size:16px; line-height:1.6; max-width:600px; }
@@ -122,7 +132,7 @@ a.button:hover,
   border-color: rgba(255, 255, 255, 0.9);
 }
 
-/* ===== SECTION 2 - FIX THE RUINED TEXT ===== */
+/* ===== SECTION 2  ===== */
 .package-box{
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -235,17 +245,17 @@ a.button:hover,
 }
 .image-placeholder img{
   width: 100%;
-  height: 220px; /* fixed height so it doesn't ruin layout */
+  height: 220px; 
   object-fit: cover;
   display: block;
 }
 
-/* Room image should be smaller */
+
 .package-right .room img{
   height: 140px;
 }
 
-/* ===== SECTION 3 - BOOK NOW with lines ===== */
+/* SECTION 3 */
 .book-now{
     margin: 40px 50px;
     text-align: center;
@@ -268,7 +278,7 @@ a.button:hover,
   border-color: rgba(255, 255, 255, 0.9);
 }
 
-/* ===== FOOTER with image on left of Inazuma ===== */
+
 footer{
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
@@ -333,8 +343,6 @@ footer{
     justify-content: center;
     flex-wrap: wrap;
     gap: 8px 18px;
-  }
-  .linkpage{
     font-size: 13px;
   }
   .hero{

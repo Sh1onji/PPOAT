@@ -1,3 +1,7 @@
+section.Info {
+    background-image :linear-gradient(rgba(10, 8, 30, 0.65), rgba(10, 8, 30, 0.4)),  url('../images/windmill.jpg');
+}
+
 body{
     background-image: url(../images/monstadt.jpg);
 }
@@ -19,7 +23,6 @@ body{
   background: #8fe3d0;
   color: #0e2a42;
 }
-
 @view-transition {
   navigation: auto;
 }   
