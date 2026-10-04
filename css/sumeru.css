@@ -3,7 +3,14 @@ section.Info {
 }
 
 body{
-    background-image: url(../images/sumeru_bg.jpg);
+  
+  background-image:
+      linear-gradient(
+          rgba(10, 8, 30, 0.65),
+          rgba(10, 8, 30, 0.4)
+      ),
+      url("../images/sumeru_bg.jpg");
+  
 }
 .package-box{
   background-color: linear-gradient(rgba(12, 38, 26, 0.78), rgba(12, 38, 26, 0.78)), url(../images/sumeru_bg.jpg);

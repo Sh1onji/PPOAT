@@ -3,7 +3,13 @@ section.Info {
 }
 
 body{
-    background-image: url(../images/monstadt.jpg);
+  
+  background-image:
+      linear-gradient(
+          rgba(10, 8, 30, 0.65),
+          rgba(10, 8, 30, 0.4)
+      ),
+      url("../images/monstadt.jpg");
 }
 .package-box{
   background-color: linear-gradient(rgba(14, 42, 66, 0.75), rgba(14, 42, 66, 0.75)), url(../images/monstadt.jpg);
