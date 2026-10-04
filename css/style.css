@@ -14,17 +14,24 @@ body{
     color: aliceblue;
     background-image: linear-gradient(rgba(10, 8, 30, 0.65), rgba(10, 8, 30, 0.4)), url("../images/inazuma-city.png");
     background-size: cover;
-    background-attachment: fixed;
+    
     background-position: center;
-    z-index: 0;
+ 
+    background-attachment: scroll;
+  
 
 
 }
 
 section.Info {
-
+    background-image: linear-gradient(rgba(10, 8, 30, 0.65), rgba(10, 8, 30, 0.4)), url('../images/inazuma1.jpg');
     background-size: cover;
+    background-position: center;
+
+    position: relative;
     min-height: 100vh;
+    padding-bottom: 6vh;              /* keeps text away from the wave */
+    clip-path: url(#waveClip);        /* exact same spelling as the id */
 }
 
 
@@ -443,7 +450,13 @@ footer{
   }
 }
 
-
+.wave {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: clamp(60px, 10vw, 140px);
+}
 
 @view-transition {
   navigation: auto;
