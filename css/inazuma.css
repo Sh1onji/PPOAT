@@ -14,21 +14,9 @@ header
     border-bottom: none;
 }
 
-body
-{position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 15px 50px;
-    box-sizing: border-box;
-    z-index: 10;
-    gap: 10px;
-    background-color: transparent;
-    border-bottom: none;
+body {
+    margin: 0;
 }
-
 /*Ito ung box nung from the land of the gods to divinity*/
 .hero
 {
@@ -74,5 +62,7 @@ footer
 
 section.Info {
     background-image :linear-gradient(rgba(10, 8, 30, 0.65), rgba(10, 8, 30, 0.4)),  url('../images/inazuma1.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
