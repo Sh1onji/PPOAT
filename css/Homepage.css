@@ -164,6 +164,8 @@ section.Homepage button:hover {
 /* Nations */
 
 section.Nations {
+    margin-top: -14vh;     /* tucks it under the hero's wave */
+    padding-top: 14vh;
     
     background-color: rgba(31, 1, 28, 0.9);
     background-image: url(../images/HomepageIMG/Nations.jpg);
