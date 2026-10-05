@@ -1,34 +1,6 @@
-header
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 15px 50px;
-    box-sizing: border-box;
-    z-index: 10;
-    gap: 10px;
-    background-color: transparent;
-    border-bottom: none;
-}
-
-footer
-{
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-    align-items: center;
-    gap: 20px;
-    padding: 20px 50px;
-    border-top: 1px solid white;
-    margin-top: 20px;
-    background: rgba(0, 0, 0, 0.4);
-}
-
 @view-transition {
   navigation: auto;
-}   
+}
 
 
 

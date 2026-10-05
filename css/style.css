@@ -339,20 +339,26 @@ footer{
   }
   header{
     display: grid;
-    grid-template-columns: 35px minmax(0, 1fr);
-    gap: 8px 12px;
-    padding: 10px 18px;
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 4px 10px;
+    padding: 12px 24px;
+  }
+  header > a:first-child img{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
   }
   #top{
     margin-right: 0;
     font-size: 16px;
     letter-spacing: 1px;
+    min-width: 0;
   }
   .nav-right{
     grid-column: 1 / -1;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px 18px;
+    flex-wrap: nowrap;
+    gap: 8px clamp(10px, 4vw, 18px);
     font-size: 13px;
   }
   .hero{
