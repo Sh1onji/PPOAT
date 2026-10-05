@@ -224,11 +224,11 @@ section.About p.text {
 .pola img {
     display: block;
     width: 100%;
-    aspect-ratio: 1 / 1;              /* square photo area */
-    object-fit: cover;                /* fills the square, no gaps */
-    object-position: center top;      /* keeps the face in frame */
+    aspect-ratio: 1 / 1;             
+    object-fit: cover;               
+    object-position: center top;     
     background: linear-gradient(160deg, #9bb8e8, #d9b8e6 60%, #f4c6d6);
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);   /* thin edge, like a printed photo */
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);   
 }
 
 .pola figcaption {
