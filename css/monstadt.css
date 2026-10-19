@@ -1,5 +1,5 @@
 section.Info {
-    background-image :linear-gradient(rgba(10, 8, 30, 0.65), rgba(10, 8, 30, 0.4)),  url('../images/windmill.jpg');
+    background-image :linear-gradient(rgba(10, 8, 30, 0.65), rgba(10, 8, 30, 0.4)),  url('../images/NewMondstadt.jpg');
 }
 
 body{
@@ -32,3 +32,8 @@ body{
 @view-transition {
   navigation: auto;
 }   
+
+nationLogo {
+width: 100px;
+height: 100px;
+}
