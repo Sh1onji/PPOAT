@@ -19,7 +19,7 @@ body {
             rgba(10, 8, 30, 0.65),
             rgba(10, 8, 30, 0.65)
         ),
-        url("../images/inazuma-city.png");
+        url("../images/HomepageIMG/Nations.jpg");
 
     background-size: cover;
     background-position: center;
@@ -37,8 +37,18 @@ section.Info {
     clip-path: url(#waveClip);        /* exact same spelling as the id */
 }
 
+h1 {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
 
-
+.nationLogo {
+    width: 50px;
+    height: 50px;
+ object-fit: contain;
+   margin-right: 10px;
+}  
 
 header{
     position: absolute; 
