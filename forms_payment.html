@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <title>Checkout | Hexanova Agency</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="icon" href="images/logo.png">
+</head>
+<body>
+<header>
+    <a href="index.html" class="homepage-link"><img id="Inazuma" src="images/logo (1).png" width="50" alt="Logo"></a>
+    <b id="top"><a href="index.html" class="homepage-link">Hexanova Agency</a></b>
+    <div class="nav-right">
+        <a href="index.html" class="linkpage">Home</a>
+        <a href="index.html#nations" class="linkpage">Nations</a>
+        <a href="about.html" class="linkpage">About</a>
+        <a href="contact.html" class="linkpage">Contact</a>
+    </div>
+</header>
+
+<main class="checkout">
+    <div class="crumbs">
+        <span>1. Choose package</span><span class="on">2. Details &amp; payment</span><span>3. Confirmation</span>
+    </div>
+
+    <div id="no-package" class="notice" hidden>
+        No package was selected. <a href="index.html#nations">Pick a nation and package first.</a>
+    </div>
+
+    <div class="checkout-grid">
+        <!-- LEFT: order summary -->
+        <aside class="panel summary">
+            <img id="summary-img" src="" alt="">
+            <div class="summary-body">
+                <span class="badge" id="nation-name">Nation</span>
+                <h2 id="package-name">Package</h2>
+                <p class="sub">Your journey across Teyvat is almost booked. Review your selection and fill in your details.</p>
+                <ul>
+                    <li><span>Nation</span><span id="s-nation"></span></li>
+                    <li><span>Package</span><span id="s-package"></span></li>
+                </ul>
+                <a class="change" href="index.html#nations">← Change package</a>
+            </div>
+        </aside>
+
+        <!-- RIGHT: form -->
+        <form class="panel" action="/submit_payment" method="POST">
+            <input type="hidden" name="nation"  id="f-nation">
+            <input type="hidden" name="package" id="f-package">
+
+            <h2>Traveler details</h2>
+            <div class="row">
+                <div class="field"><label for="name">Full name</label>
+                    <input type="text" id="name" name="name" autocomplete="name" required></div>
+                <div class="field"><label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required></div>
+            </div>
+            <div class="row">
+                <div class="field"><label for="travel_date">Travel date</label>
+                    <input type="date" id="travel_date" name="travel_date" required></div>
+                <div class="field"><label for="travelers">Travelers</label>
+                    <div class="stepper">
+                        <button type="button" data-step="-1" aria-label="Fewer">−</button>
+                        <input type="number" id="travelers" name="travelers" value="1" min="1" max="10" readonly>
+                        <button type="button" data-step="1" aria-label="More">+</button>
+                    </div></div>
+            </div>
+
+            <h2>Payment method</h2>
+            <div class="methods">
+                <div><input type="radio" id="m-card" name="method" value="card" checked><label for="m-card">💳 Card</label></div>
+                <div><input type="radio" id="m-gcash" name="method" value="gcash"><label for="m-gcash">GCash</label></div>
+                <div><input type="radio" id="m-maya" name="method" value="maya"><label for="m-maya">Maya</label></div>
+            </div>
+
+            <div id="card-fields">
+                <div class="field"><label for="card_number">Card number</label>
+                    <input type="text" id="card_number" inputmode="numeric" autocomplete="cc-number" placeholder="1234 5678 9012 3456" required></div>
+                <div class="row">
+                    <div class="field"><label for="expiry_date">Expiry</label>
+                        <input type="text" id="expiry_date" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/YY" required></div>
+                    <div class="field"><label for="cvv">CVV</label>
+                        <input type="password" id="cvv" inputmode="numeric" autocomplete="cc-csc" required></div>
+                </div>
+            </div>
+
+            <button type="submit" class="pay-btn">Submit Payment</button>
+            <p class="secure">🔒 Your details are encrypted</p>
+        </form>
+    </div>
+</main>
+
+<script src="js/checkout.js"></script>
+<script>
+  // mirror values into the summary list
+  document.getElementById('s-nation').textContent  = document.getElementById('nation-name').textContent;
+  document.getElementById('s-package').textContent = document.getElementById('package-name').textContent;
+</script>
+</body>
+</html>
