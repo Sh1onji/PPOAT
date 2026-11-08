@@ -1,0 +1,318 @@
+/* --------------------------------------------------
+   GENERAL
+-------------------------------------------------- */
+@font-face {
+    font-family: "Genshin";
+    src: url("../Font/zhcn.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: "Genshin", sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
+header.About {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 50px;
+    box-sizing: border-box;
+    z-index: 10;
+    gap: 10px;
+    background-color: transparent;
+    border-bottom: none;
+}
+
+header.About .logo {
+    width: 65px;
+    height: auto;
+}
+
+header.About .header-text {
+    color: white;
+    font-size: clamp(16px, 1.5vw, 25px);
+}
+
+header.About .nav {
+    margin-left: auto;
+    display: flex;
+    gap: clamp(15px, 2vw, 30px);
+}
+
+header.About .nav a,
+header.About .nav span {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+header.About .nav span {
+    color: #c9a45c; /* Highlights current page */
+}
+
+/* --------------------------------------------------
+   INQUIRE SECTION & HERO BACKGROUND
+-------------------------------------------------- */
+section.inquire-section {
+    position: relative;
+    z-index: 0;
+    min-height: 100vh;
+    padding: 110px 8vw 80px 8vw; /* Space for absolute header */
+    background-image: url("../images/wp7648732-genshin-impact-desktop-wallpapers.jpg");
+    background-color: rgba(31, 1, 28, 0.6);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glassmorphism Inquiry Card */
+.inquire-card {
+    width: 100%;
+    max-width: 680px;
+    background: rgba(22, 16, 38, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 36px 36px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    color: #f1eff7;
+    z-index: 2;
+    margin-bottom: 40px;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.form-header .subTitle {
+    display: block;
+    font-size: 13px;
+    color: #c9a45c;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.form-header .Title {
+    margin: 0 0 8px 0;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: bold;
+}
+
+.form-header .text {
+    margin: 0;
+    font-size: clamp(12px, 1.2vw, 15px);
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.4;
+}
+
+/* Form Layout Elements */
+.inquire-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Input Fields */
+.inquire-form input[type="text"],
+.inquire-form input[type="email"],
+.inquire-form input[type="number"],
+.inquire-form input[type="date"],
+.inquire-form select,
+.inquire-form textarea {
+    width: 100%;
+    padding: 10px 14px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: "Genshin", sans-serif;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inquire-form select option {
+    background-color: #1a1429;
+    color: #fff;
+}
+
+.inquire-form input:focus,
+.inquire-form select:focus,
+.inquire-form textarea:focus {
+    border-color: #c9a45c;
+    box-shadow: 0 0 8px rgba(201, 164, 92, 0.3);
+}
+
+/* Radio Buttons */
+.radio-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.radio-option input[type="radio"] {
+    accent-color: #c9a45c;
+    cursor: pointer;
+}
+
+/* Submit Button */
+.submit-btn {
+    margin-top: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, rgba(201, 164, 92, 0.3), rgba(201, 164, 92, 0.1));
+    border: 1px solid #c9a45c;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.submit-btn:hover {
+    background: rgba(201, 164, 92, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(201, 164, 92, 0.3);
+}
+
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 20px;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+.foot-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.foot-left img {
+    width: 25px;
+    height: 25px;
+}
+
+.foot-left span {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.foot-nav,
+.foot-socials {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.foot-nav {
+    justify-content: center;
+}
+
+.foot-socials {
+    justify-content: flex-end;
+}
+
+.foot-nav a,
+.foot-socials a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.foot-nav a:hover,
+.foot-socials a:hover {
+    color: white;
+}
+
+/* --------------------------------------------------
+   RESPONSIVE MEDIA QUERIES
+-------------------------------------------------- */
+@media (max-width: 800px) {
+    .form-row {
+        flex-direction: column;
+    }
+    header.About {
+        padding: 15px 20px;
+    }
+    footer {
+        padding: 15px 20px;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+    .foot-socials {
+        justify-content: center;
+    }
+}

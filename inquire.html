@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+
+    <link rel="stylesheet" href="css/inquire.css">
+
+    <title>Inquire | Hexanova Agency</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="About">
+        <div>
+            <img src="images/logo.png" alt="Hexanova Agency Logo" class="logo">
+        </div>
+
+        <div class="header-text">
+            Hexanova Agency
+        </div>
+
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="index.html#nations">Nations</a>
+            <span>Inquire</span>
+        </nav>
+    </header>
+
+    <!-- Inquire Main Section -->
+    <section class="inquire-section">
+        <div class="inquire-card">
+            <div class="form-header">
+                <span class="subTitle">Teyvat Expeditions</span>
+                <h2 class="Title">Book Your Journey</h2>
+                <p class="text">Submit your travel details below and our agents will prepare your custom itinerary across the nations.</p>
+            </div>
+
+            <form action="#" method="POST" class="inquire-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullname">Traveler Name</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="e.g. Lumine" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Contact Email</label>
+                        <input type="email" id="email" name="email" placeholder="traveler@adventurersguild.com" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nation">Destination Nation</label>
+                        <select id="nation" name="nation" required>
+                            <option value="" disabled selected>Select a destination</option>
+                            <option value="mondstadt">Mondstadt</option>
+                            <option value="liyue">Liyue</option>
+                            <option value="inazuma">Inazuma</option>
+                            <option value="sumeru">Sumeru</option>
+                            <option value="fontaine">Fontaine</option>
+                            <option value="natlan">Natlan</option>
+                            <option value="snezhnaya">Snezhnaya</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="party-size">Party Size</label>
+                        <input type="number" id="party-size" name="party-size" min="1" max="8" value="1">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="departure">Departure Date</label>
+                        <input type="date" id="departure" name="departure" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="return">Return Date</label>
+                        <input type="date" id="return" name="return">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Expedition Purpose</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="purpose" value="sightseeing" checked>
+                            <span>Sightseeing & Resort</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="purpose" value="domain">
+                            <span>Domain Clearing</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="purpose" value="research">
+                            <span>Guild Research</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Special Requirements / Notes</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Mention dietary restrictions, elemental vision safety, or guide preferences..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="foot-left">
+                <img src="images/HomepageIMG/Logo.png" alt="logo">
+                <span>Teyvat Travel Agency</span>
+            </div>
+
+            <nav class="foot-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="Package.html">Nations</a>
+                <a href="about.html">About</a>
+                <a href="inquire.html">Contact</a>
+            </nav>
+            
+            <nav class="foot-socials" aria-label="Social media">
+                <a href="https://discord.com/">Discord</a>
+                <a href="https://twitter.com/">Twitter</a>
+                <a href="https://www.instagram.com/">Instagram</a>
+                <a href="https://www.youtube.com/">YouTube</a>
+            </nav>
+        </footer>
+    </section>
+
+</body>
+</html>
