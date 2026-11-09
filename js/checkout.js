@@ -1,4 +1,3 @@
-// Read selection: URL first, then the copy saved by order.js
 let saved = {};
 try { saved = JSON.parse(sessionStorage.getItem('teyvatOrder')) || {}; } catch (e) {}
 const q = new URLSearchParams(location.search);
