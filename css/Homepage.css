@@ -1,5 +1,7 @@
+
 html {
     scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar {
@@ -32,6 +34,42 @@ header.Homepage{
     
     
     
+}
+/* > button */
+.prev,
+.next {
+    position: absolute;
+    bottom: 225px;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    background: rgba(20, 10, 30, 0.6);
+    backdrop-filter: blur(8px);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     transition: background 0.3s ease,
+                transform 0.3s ease;
+}
+
+
+.prev {
+    left: 190px;
+}
+
+.next {
+    right: 190px;
+}
+
+.prev:hover,
+.next:hover {
+    background: rgba(201, 169, 110, 0.5);
+    transform: scale(1.1);
 }
 
 header.Homepage .logo {
@@ -191,7 +229,7 @@ section.Nations p.subText {
 }
 
 section.Nations p.Title {
-    font-size: clamp(11px, 6vw, 53px);
+    font-size: clamp(10px, 6vw, 53px);
    margin:0;
    margin-bottom: 10px;
 }
@@ -201,120 +239,227 @@ section.Nations p.text {
     margin:0;
 }
 
-section.Nations .NationImages {
-    margin-top: 20px;
-    display: flex;
-     gap: 20px;
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    padding: 20px 5px;
-    cursor: grab;
-    
-}
 
-section.Nations .NationImages::-webkit-scrollbar {
-    height: 6px;
-}
-
-section.Nations .NationImages::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-}
-
-section.Nations .NationImages::-webkit-scrollbar-thumb {
-    background: rgba(216, 196, 154, 0.8);
-    border-radius: 20px;
-}
-
-section.Nations .NationImages::-webkit-scrollbar-thumb:hover {
-    background: rgba(216, 196, 154, 1);
-}
-
-section.Nations .NationCard {
-
-    
-    position: relative;
-    flex: 0 0 250px;
-    width: 250px;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 8px;
-    
-}
-
-section.Nations .NationImages .nation-image {
+.nations-img {
     display: block;
-    width: 250px;
-    height: 400px;
-    object-fit: cover; 
-    filter: brightness(70%);
-    transition: opacity 0.3s ease;
+    margin: 20px auto 0;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+    
     
 }
 
-section.Nations .NationCard .nation-overlay {
+
+section.Nations .NationImage {
+    position: relative;
+
+    width: 100%;
+    max-width: 800px;
+
+    margin: 20px auto;
+    border: 2px solid #c9a96e;
+    border-radius: 10px;
+
+    outline: 1px solid rgba(201, 169, 110, 0.4);
+   
+    outline-offset: 5px;
+    box-shadow:
+        0 0 20px rgba(201, 169, 110, 0.2),
+        0 0 40px rgba(100, 50, 150, 0.2);
+
+    overflow: hidden;
+    cursor: pointer;
+    isolation: isolate;
+
+}
+
+section.Nations .NationImage::after {
+    content: "";
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: auto;
-    object-fit: fill;
+     background: linear-gradient(
+        90deg,
+        rgba(20, 10, 20, 0.55),
+        rgba(20, 10, 20, 0.15) 70%,
+        transparent
+    );
+    z-index: 1;
     pointer-events: none;
-    transform: translateY(150px);
-    opacity: 0;
-    transition: opacity 0.3s ease;
 }
 
+/* Embla Carousel */
 
-section.Nations .NationCard:hover .nation-overlay,
-section.Nations .NationCard:focus-within .nation-overlay{
-
-    opacity: 1;
-    
-}
-
-section.Nations .NationCard:hover .nation-image,
-section.Nations .NationCard:focus-within .nation-image {
- filter: brightness(90%);
-    
-}
-
-section.Nations .NationCard .nation-name {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.embla {
     width: 100%;
-    margin: 0;
-    padding: 12px;
-    text-align: center;
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
+    max-width: none;
+    margin: 20px auto;
 }
 
-section.Nations .NationCard .nation-info {
-    position: absolute;
-    bottom: 48px;
-    left: 0;
+.embla__viewport {
+    overflow: hidden;
     width: 100%;
+}
+
+.embla__container {
+    display: flex;
+    
+    touch-action: pan-y pinch-zoom;
+}
+.embla__slide {
+    flex: 0 0 min(800px, 90vw);
+    min-width: 0;
+    margin-right: 200px;
+}
+section.Nations .embla__slide .NationImage {
+    width: 100%;
+    max-width: none;
     margin: 0;
     box-sizing: border-box;
-    padding: 8px 12px;
-    text-align: center;
-    color: white;
-    font-size: 13px;
-    line-height: 1.35;
-    background: rgba(0, 0, 0, 0.72);
-    opacity: 0;
-    transform: translateY(8px);
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-section.Nations .NationCard:hover .nation-info,
-section.Nations .NationCard:focus-within .nation-info {
-    opacity: 1;
-    transform: translateY(0);
+/* Next button */
+
+
+.nations-img {
+    display: block;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    margin: 0;
+    border-radius: 8px;
+}
+
+/* Caption overlay */
+.caption {
+    position: absolute;
+    top: 5%;
+    left: 6%;
+    width: 65%;
+    color: white;
+    z-index: 2;
+}
+
+.nation-name {
+    font-size: clamp(24px, 4vw, 40px);
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 10px black;
+    
+}
+
+.nation-subtitle {
+    font-size: clamp(16px, 2.5vw, 24px);
+    margin: 5px 0 0;
+    text-shadow: 2px 2px 10px black;
+}
+
+.nation-text {
+    font-size: clamp(12px, 1.5vw, 16px);
+    line-height: 1.3;
+    margin: 10px 0 0;
+    width: 100%;
+    text-shadow: 2px 2px 10px black;
+}
+
+.sub-image1,
+.sub-image2 {
+    position: absolute;
+    bottom: 4%;
+    width: 40%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.sub-image1 {
+    right: 6%;
+}
+
+.sub-image2 {
+    left: 6%;
+}
+.sub-image1:hover,
+.sub-image2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.pola {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: clamp(70px, 15%, 120px);
+    padding: 8px 8px 20px;
+    margin: 0;
+    background: #f0eaf0;
+    transform: rotate(4deg);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    box-sizing: border-box;
+}
+
+.pola img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.pola figcaption {
+    text-align: center;
+    font-size: clamp(8px, 1.2vw, 13px);
+    color: #252525;
+    font-family: Georgia, serif;
+    font-style: italic;
+    margin-top: 8px;
+}
+/* Tape */
+.pola::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+
+    width: 90px;
+    height: 25px;
+    transform: translateX(-50%) rotate(-4deg);
+    background: rgba(248, 243, 243, 0.45);
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.15);
+    z-index: 4;
+}
+
+section.Nations .NationImage:hover {
+    
+
+    border-color: #f5d58a;
+
+    box-shadow:
+        0 0 15px rgba(201, 169, 110, 0.5),
+        0 0 35px rgba(201, 169, 110, 0.3);
+    
+    
+}
+
+
+
+/* Image zoom */
+
+section.Nations .NationImage .nations-img {
+    transition: transform 0.6s ease;
+}
+
+section.Nations .NationImage:hover .nations-img {
+    transform: scale(1.05);
 }
 
 .wave {
@@ -325,10 +470,35 @@ section.Nations .NationCard:focus-within .nation-info {
     height: clamp(60px, 10vw, 140px);
 }
 
-
 footer {
     border: none;
 }
 @view-transition {
   navigation: auto;
 }   
+@media (max-width: 768px) {
+
+
+    .sub-image1, .sub-image2 {
+        width: 150px;
+    }
+    .pola {
+        width: 80px;
+        padding: 5px 5px 20px;
+    }
+    
+    .pola::before {
+        width: 70px;
+        height: 20px;
+    }
+
+    .prev {
+        left: 10px;
+    }
+    .next {
+        right: 10px;
+    }
+
+    
+
+}

@@ -5,6 +5,9 @@
   margin:0; 
   box-sizing:border-box; }
 
+  html {
+    scroll-behavior: smooth;
+  }
 
   html::-webkit-scrollbar {
     display: none;

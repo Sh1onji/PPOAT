@@ -1,5 +1,3 @@
-// Add to every nation page (nations/*.html), right before </body>:
-// <script src="../js/order.js"></script>
 document.querySelectorAll('.order-button').forEach(btn => {
   const card = btn.closest('.pk-card');
   if (!card) return;
