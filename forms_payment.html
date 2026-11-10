@@ -7,11 +7,11 @@
     <title>Checkout | Hexanova Agency</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/checkout.css">
-    <link rel="icon" href="images/logo.png">
+    <link rel="icon" href="images/Compass.webp">
 </head>
 <body>
 <header>
-    <a href="index.html" class="homepage-link"><img id="Inazuma" src="images/logo (1).png" width="50" alt="Logo"></a>
+    <a href="index.html" class="homepage-link"><img id="Inazuma" src="images/Compass.webp" width="50" alt="Logo"></a>
     <b id="top"><a href="index.html" class="homepage-link">Hexanova Agency</a></b>
     <div class="nav-right">
         <a href="index.html" class="linkpage">Home</a>
@@ -31,25 +31,31 @@
     </div>
 
     <div class="checkout-grid">
-        <!-- LEFT: order summary -->
+        <!-- LEFT: order summary + pricing -->
         <aside class="panel summary">
             <img id="summary-img" src="" alt="">
             <div class="summary-body">
                 <span class="badge" id="nation-name">Nation</span>
                 <h2 id="package-name">Package</h2>
-                <p class="sub">Your journey across Teyvat is almost booked. Review your selection and fill in your details.</p>
+                <p class="rating" id="rating-line"></p>
                 <ul>
-                    <li><span>Nation</span><span id="s-nation"></span></li>
-                    <li><span>Package</span><span id="s-package"></span></li>
+                    <li><span>Departure</span><span id="s-dep">—</span></li>
+                    <li><span>Return</span><span id="s-ret">—</span></li>
+                    <li><span>Duration</span><span id="s-nights">—</span></li>
+                    <li><span>Rate per person / night</span><span id="s-rate">—</span></li>
+                    <li><span>Travelers</span><span id="s-trav">1</span></li>
                 </ul>
+                <div class="total"><span>Total</span><strong id="s-total">₱0</strong></div>
+                <p class="fine">Total = rate × travelers × nights. Select your dates to see the final price.</p>
                 <a class="change" href="index.html#nations">← Change package</a>
             </div>
         </aside>
 
         <!-- RIGHT: form -->
-        <form class="panel" action="/submit_payment" method="POST">
+        <form class="panel" id="booking-form" novalidate="false">
             <input type="hidden" name="nation"  id="f-nation">
             <input type="hidden" name="package" id="f-package">
+            <input type="hidden" name="total"   id="f-total">
 
             <h2>Traveler details</h2>
             <div class="row">
@@ -58,22 +64,29 @@
                 <div class="field"><label for="email">Email</label>
                     <input type="email" id="email" name="email" autocomplete="email" required></div>
             </div>
+            <div class="field"><label for="phone">Contact number</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+63 9XX XXX XXXX"
+                       pattern="[0-9+\s\-()]{7,20}" title="Enter a valid phone number, e.g. +63 912 345 6789" required></div>
+
+            <h2>Trip dates</h2>
             <div class="row">
-                <div class="field"><label for="travel_date">Travel date</label>
-                    <input type="date" id="travel_date" name="travel_date" required></div>
-                <div class="field"><label for="travelers">Travelers</label>
-                    <div class="stepper">
-                        <button type="button" data-step="-1" aria-label="Fewer">−</button>
-                        <input type="number" id="travelers" name="travelers" value="1" min="1" max="10" readonly>
-                        <button type="button" data-step="1" aria-label="More">+</button>
-                    </div></div>
+                <div class="field"><label for="departure_date">Departure date</label>
+                    <input type="date" id="departure_date" name="departure_date" required></div>
+                <div class="field"><label for="return_date">Return date</label>
+                    <input type="date" id="return_date" name="return_date" required></div>
             </div>
+            <div class="field"><label for="travelers">Travelers</label>
+                <div class="stepper">
+                    <button type="button" data-step="-1" aria-label="Fewer travelers">−</button>
+                    <input type="number" id="travelers" name="travelers" value="1" min="1" max="10" readonly>
+                    <button type="button" data-step="1" aria-label="More travelers">+</button>
+                </div></div>
 
             <h2>Payment method</h2>
             <div class="methods">
-                <div><input type="radio" id="m-card" name="method" value="card" checked><label for="m-card">💳 Card</label></div>
-                <div><input type="radio" id="m-gcash" name="method" value="gcash"><label for="m-gcash">GCash</label></div>
-                <div><input type="radio" id="m-maya" name="method" value="maya"><label for="m-maya">Maya</label></div>
+                <div><input type="radio" id="m-card" name="method" value="Card" checked><label for="m-card">💳 Card</label></div>
+                <div><input type="radio" id="m-gcash" name="method" value="GCash"><label for="m-gcash">GCash</label></div>
+                <div><input type="radio" id="m-maya" name="method" value="Maya"><label for="m-maya">Maya</label></div>
             </div>
 
             <div id="card-fields">
@@ -87,17 +100,19 @@
                 </div>
             </div>
 
-            <button type="submit" class="pay-btn">Submit Payment</button>
+            <button type="submit" class="pay-btn">Confirm Booking</button>
             <p class="secure">🔒 Your details are encrypted</p>
         </form>
     </div>
+
+    <!-- REVIEWS -->
+    <section class="reviews" id="reviews" hidden>
+        <h2>What travelers say about <span id="rev-nation"></span></h2>
+        <div class="review-grid" id="review-grid"></div>
+    </section>
 </main>
 
+<script src="js/packages.js"></script>
 <script src="js/checkout.js"></script>
-<script>
-  // mirror values into the summary list
-  document.getElementById('s-nation').textContent  = document.getElementById('nation-name').textContent;
-  document.getElementById('s-package').textContent = document.getElementById('package-name').textContent;
-</script>
 </body>
 </html>

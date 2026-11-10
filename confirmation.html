@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <title>Booking Confirmed | Hexanova Agency</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="icon" href="images/Compass.webp">
+</head>
+<body>
+<header>
+    <a href="index.html" class="homepage-link"><img id="Inazuma" src="images/Compass.webp" width="50" alt="Logo"></a>
+    <b id="top"><a href="index.html" class="homepage-link">Hexanova Agency</a></b>
+    <div class="nav-right">
+        <a href="index.html" class="linkpage">Home</a>
+        <a href="index.html#nations" class="linkpage">Nations</a>
+        <a href="about.html" class="linkpage">About</a>
+        <a href="contact.html" class="linkpage">Contact</a>
+    </div>
+</header>
+
+<main class="checkout confirm">
+    <div class="crumbs">
+        <span>1. Choose package</span><span>2. Details &amp; payment</span><span class="on">3. Confirmation</span>
+    </div>
+
+    <div id="empty" class="notice" hidden>
+        No booking found. <a href="index.html#nations">Start by choosing a package.</a>
+    </div>
+
+    <section class="panel receipt" id="receipt" hidden>
+        <img id="c-img" src="" alt="">
+        <div class="receipt-body">
+            <div class="check" aria-hidden="true">✓</div>
+            <h1>Booking confirmed!</h1>
+            <p class="sub">Thank you, <span id="c-name"></span>. A confirmation will be sent to <span id="c-email"></span>.</p>
+            <p class="ref">Booking reference <strong id="c-ref"></strong></p>
+
+            <ul class="details">
+                <li><span>Nation</span><span id="c-nation"></span></li>
+                <li><span>Package</span><span id="c-package"></span></li>
+                <li><span>Departure</span><span id="c-dep"></span></li>
+                <li><span>Return</span><span id="c-ret"></span></li>
+                <li><span>Duration</span><span id="c-nights"></span></li>
+                <li><span>Travelers</span><span id="c-trav"></span></li>
+                <li><span>Contact number</span><span id="c-phone"></span></li>
+                <li><span>Payment method</span><span id="c-method"></span></li>
+                <li><span>Rate per person / night</span><span id="c-rate"></span></li>
+            </ul>
+            <div class="total"><span>Total</span><strong id="c-total"></strong></div>
+
+            <div class="actions">
+                <button type="button" id="print-btn">🖨 Print / Save as PDF</button>
+                <a class="button-link" href="index.html#nations">Book another trip</a>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="js/confirmation.js"></script>
+</body>
+</html>
