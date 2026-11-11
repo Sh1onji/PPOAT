@@ -44,14 +44,129 @@ h1 {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    font-size: clamp(32px, 4vw, 60px);
+
   }
 
+
+.hero-images {
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr 1fr;
+    grid-template-rows: 190px 190px;
+    grid-template-areas:
+        "one two two"
+        "one three four";
+    gap: 12px;
+    width: 100%;
+    max-width: 650px;
+    height: 392px;
+    flex-shrink: 0;
+}
+
+.hero-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    transition: transform 0.35s ease;
+}
+
+
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.hero-img:hover {
+    transform: translateY(-8px) scale(1.02);
+    z-index: 5;
+}
+
+.img-one {
+    grid-area: one;
+}
+
+.img-two {
+    grid-area: two;
+}
+
+.img-three {
+    grid-area: three;
+}
+
+.img-four {
+    grid-area: four;
+}
+
+.image-text {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    right: 12px;
+    z-index: 2;
+}
+
+
+
+.image-text h2 {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+.img-two .image-text,
+.img-three .image-text {
+    bottom: 10px;
+    left: 12px;
+}
+
+.img-two .image-text h2,
+.img-three .image-text h2 {
+    font-size: 15px;
+}
+
+
+
+.hero-img:hover {
+    transform: translateY(-6px);
+    z-index: 5;
+}
+
+.hero-img:hover img {
+    transform: scale(1.08);
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 600px;
+}
+
+
+
+.kicker {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
 .nationLogo {
-    width: 50px;
-    height: 50px;
- object-fit: contain;
-   margin-right: 10px;
-}  
+    width: 65px;
+    height: auto;
+    object-fit: contain;
+}
+
+.hero h1 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: clamp(36px, 4vw, 60px);
+    margin-bottom: 25px;
+}
 
 header{
     position: absolute; 
@@ -106,14 +221,20 @@ header{
 }
 
 /* Push content down so it's not hidden under fixed header */
-.hero{
-    padding: 150px 50px 80px;
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+
+    min-height: 100vh;
+    padding: 130px 60px 100px;
 }
 
-.hero .desc{
-  max-width: 600px;
-  font-size: 16px;
-  line-height: 1.6;
+.hero .desc {
+    max-width: 550px;
+    font-size: 16px;
+    line-height: 1.8;
 }
 
 .hero-bottom{
@@ -346,85 +467,183 @@ footer{
   color: white;
 }
 
-@media (max-width: 760px){
-  body{
-    background-attachment: scroll;
-  }
-  header{
-    display: grid;
-    grid-template-columns: 50px minmax(0, 1fr);
-    gap: 4px 10px;
-    padding: 12px 24px;
-  }
-  header > a:first-child img{
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-  }
-  #top{
-    margin-right: 0;
-    font-size: 16px;
-    letter-spacing: 1px;
-    min-width: 0;
-  }
-  .nav-right{
-    grid-column: 1 / -1;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 8px clamp(10px, 4vw, 18px);
-    font-size: 13px;
-  }
-  .hero{
-    padding: 140px 24px 52px;
-  }
-  .hero h1{
-    font-size: 48px;
-  }
-  .hero .desc{
-    font-size: 15px;
-  }
-  .hero-bottom{
-    padding: 0 0 20px;
-  }
-  .hero + .hero-bottom{
-    padding: 0 24px 20px;
-  }
-  .hero-bottom h2{
-    font-size: 24px;
-  }
-  .package-box{
-    margin: 28px 16px;
-    padding: 20px;
-    gap: 18px;
-  }
-  .package-name{
-    font-size: 22px;
-  }
-  .pk-card{
-    grid-template-columns: minmax(0, 1fr) 120px;
-    min-height: 160px;
-  }
-  .pk-card img{
-    width: 120px;
-    height: 140px;
-  }
-  .book-now{
-    margin: 32px 24px;
-    padding: 44px 0;
-  }
-  .book-now h2{
-    font-size: 44px;
-    letter-spacing: 10px;
-  }
-  footer{
-    grid-template-columns: minmax(0, 1fr);
-    justify-items: center;
-    padding: 20px;
-  }
-  .foot-nav,
-  .foot-socials{
-    justify-content: center;
-  }
+
+@media (max-width: 760px) {
+
+    body {
+        background-attachment: scroll;
+    }
+
+    /* HEADER */
+    header {
+        display: grid;
+        grid-template-columns: 50px minmax(0, 1fr);
+        gap: 4px 10px;
+        padding: 12px 24px;
+    }
+
+    header > a:first-child img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
+
+    #top {
+        margin-right: 0;
+        font-size: 16px;
+        letter-spacing: 1px;
+        min-width: 0;
+    }
+
+    .nav-right {
+        grid-column: 1 / -1;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 8px clamp(10px, 4vw, 18px);
+        font-size: 13px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+        padding: 130px 24px 60px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero .desc {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* ASYMMETRICAL MOBILE GALLERY */
+    .hero-images {
+        display: grid;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        justify-self: center;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 170px 130px 160px;
+
+        grid-template-areas:
+            "one two"
+            "one three"
+            "four four";
+
+        gap: 10px;
+    }
+
+    /* IMAGE POSITIONS */
+    .img-one {
+        grid-area: one;
+    }
+
+    .img-two {
+        grid-area: two;
+    }
+
+    .img-three {
+        grid-area: three;
+    }
+
+    .img-four {
+        grid-area: four;
+    }
+
+    /* IMAGE SIZING */
+    .hero-img {
+        position: relative;
+        min-width: 0;
+        min-height: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* IMAGE TEXT */
+    .image-text {
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+    }
+
+    .image-text h2 {
+        font-size: 12px;
+    }
+
+    /* HERO BOTTOM */
+    .hero-bottom {
+        padding: 0 0 20px;
+    }
+
+    .hero + .hero-bottom {
+        padding: 0 24px 20px;
+    }
+
+    .hero-bottom h2 {
+        font-size: 24px;
+    }
+
+    /* PACKAGE SECTION */
+    .package-box {
+        margin: 28px 16px;
+        padding: 20px;
+        gap: 18px;
+    }
+
+    .package-name {
+        font-size: 22px;
+    }
+
+    .pk-card {
+        grid-template-columns: minmax(0, 1fr) 120px;
+        min-height: 160px;
+    }
+
+    .pk-card img {
+        width: 120px;
+        height: 140px;
+    }
+
+    /* BOOK NOW */
+    .book-now {
+        margin: 32px 24px;
+        padding: 44px 0;
+    }
+
+    .book-now h2 {
+        font-size: 44px;
+        letter-spacing: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        padding: 20px;
+    }
+
+    .foot-nav,
+    .foot-socials {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 420px){
@@ -483,3 +702,5 @@ footer{
 @view-transition {
   navigation: auto;
 }   
+
+
